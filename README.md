@@ -12,9 +12,6 @@ recommendation system which will predict disease and medicine according to
 symptoms entered by patients/users.
 
 
-## Authors
-
-- [@adihargane](https://github.com/adihargane)
 
 
 ## Contributing
