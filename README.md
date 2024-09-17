@@ -52,7 +52,7 @@ To install the dependencies from `requirements.txt`, run:
 pip install -r requirements.txt
 ```
 
-Alternatively, copy the `lib` folder from an existing virtual environment to your new environment.
+Alternatively, copy the `lib` folder from an existing virtual environment(Ghom) to your new environment.
 
 ### 4. Set Up MySQL
 
