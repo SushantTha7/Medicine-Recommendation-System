@@ -1,0 +1,75 @@
+/* .form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #3e8e41;
+} */
+
+/* #input_symptoms {
+    .form-container {
+
+    }
+    input {
+    }
+} */
+
+label {
+    padding: 4px 6px;
+    line-height: 190%;
+    outline-style: none;
+    transition: all 0.1s;
+}
+
+.hiddenCB div {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hiddenCB input[type="checkbox"],
+.hiddenCB input[type="radio"] {
+    display: none;
+}
+
+.hiddenCB label {
+    cursor: pointer;
+}
+
+.hiddenCB input[type="checkbox"] + label:hover {
+    background: rgba(162, 160, 24, 0.227);
+}
+
+.hiddenCB input[type="checkbox"]:checked + label {
+    background: rgba(0, 128, 128, 0.4);
+}
+
+.hiddenCB input[type="checkbox"]:checked + label:hover {
+    background: rgba(0, 128, 128, 0, 0.7);
+}

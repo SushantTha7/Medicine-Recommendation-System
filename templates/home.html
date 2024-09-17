@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicination</title>
+    <link rel="icon" href="{{ url_for('static',filename='images/icon1.png') }}">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/mainpage.css') }}">
+</head>
+
+<body>
+    <header>
+        <!-- <img class="logo" src="images/logo.png" alt="logo">    -->
+        <h1 class="logo">
+            <a href="{{ url_for('Landing_page') }}">Medicination</a> <!-- Changed to 'index' -->
+        </h1>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="{{ url_for('about_page') }}">About</a></li>
+                <li><a href="{{ url_for('team_page') }}">Team</a></li>
+                <li><a href="{{ url_for('contact_page') }}">Contact</a></li>
+                <li><a href="{{ url_for('history_page') }}">History</a></li>
+            </ul>
+        </nav>
+        <!-- <nav> -->
+            <a class="cta" href="{{ url_for('check_page') }}"><button>Let's Check</button></a>
+            <nav>
+                <ul class="nav__links">
+                    <li><a href="{{ url_for('logout') }}">logout</a></li>
+                </ul>
+            </nav>
+            <!-- <a class="cta" href="{{ url_for('register') }}"><button>History</button></a> -->
+            <!-- <a href="/logout">Logout</a> -->
+            <!-- {% if session.logged_in %}
+            <a class="cta" href="{{ url_for('check_page') }}"><button>Let's Check</button></a>
+            <a class="cta" href="{{ url_for('history') }}"><button>History</button></a>
+            <a href="/logout">Logout</a>
+            {% else %}
+            <a href="/register">Register</a>
+            <a href="/login">Login</a>
+             {% endif %} --> 
+             <!-- commented out for now  -->
+        <!-- </nav> -->
+
+    </header>
+    <section class="hero">
+        <h2>Welcome to Medicination</h2>
+        <p>Your go-to platform for personalized medical diagnosis and treatment recommendations. Simply select your symptoms, and we'll provide probable diagnosis suggestions using advanced machine learning models.</p>
+        <a class="cta" href="{{ url_for('check_page') }}"><button>Get Started</button></a>
+    </section>
+
+    <section class="features">
+        <h3>Why Use Medicination?</h3>
+        <ul>
+            <li>Get quick and accurate medical diagnosis predictions</li>
+            <li>Powered by machine learning and AI for better insights</li>
+            <li>Access your diagnosis history anytime</li>
+            <li>Completely secure and private</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Medicination. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

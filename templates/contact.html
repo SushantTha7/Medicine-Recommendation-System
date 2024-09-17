@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicination</title>
+    <link rel="icon" href="{{ url_for('static',filename='images/icon1.png') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+</head>
+<body>
+    <header>
+
+        <h1 class="logo" >
+            <a href="{{ url_for('Landing_page') }}">Medicination</a>
+        </h1>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="{{ url_for('about_page') }}">About</a></li>
+                <li><a href="{{ url_for('team_page') }}">Team</a></li>
+                <li><a href="{{ url_for('contact_page') }}">Contact</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="{{ url_for('check_page') }}"><button>Let's Check</button></a>
+    </header>
+
+    <div id="body">
+		<h1>Contact Us</h1>
+		<form method='POST'  action='/send' >
+			<input type="text" name="name" id="name" value="name">
+			<input type="text" name="address" id="address" value="address">
+			<input type="text" name="email" id="email" value="email">
+			<input type="text" name="phone" id="phone" value="phone number">
+			<textarea name="message" id="message" value="message">message</textarea>
+			<input type="submit" name="send" id="send" value="send">
+		</form>
+        <div class="contactimg">
+            <img src="{{ url_for('static',filename='images/contact.png') }} " alt="">
+        </div>
+    </div>
+    
+
+
+    <footer class="footer">
+        <div class="container_foot">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="{{ url_for('about_page') }}">about us</a></li>
+                        <li><a href="{{ url_for('team_page') }}">team</a></li>
+                    </ul>
+                </div>
+ 
+ 
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/adihargane_"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/the_pratzs_pb7?utm_medium=copy_link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/vamsi-avula-390431219/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </footer>
+    <div id="footer"></div>
+</body>
+</html>

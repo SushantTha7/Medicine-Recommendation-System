@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Disease Prediction System | 2023 </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <div class="home">
+        <!-- //navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Medication</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Lets Check</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- option select symptoms -->
+
+        <div class="container">
+            <div class="symptoms-options">
+                <h1>Disease Prediction<br /> &<br /> Medicine recommendation System</h1>
+                <div class="options-list">
+                    <div class="opt-1">
+                        <label for="country">Symptom No.1:</label>
+                        <input id="s1" name="Symptom1" placeholder="Symptoms1" type="text" class="validate"
+                            list="datalist1">
+                        <datalist id="datalist1" class="" datalist">
+
+                            <option value="Sm1" disabled selected class="selected">Symptoms1</option>
+                            <option value="Skin rash">
+                            <option value="Nodal skin eruptions">
+                            <option value="Continuous sneezing">
+                            <option value="Shivering">
+                            <option value="Chills">
+                            <option value="Joint pain">
+                            <option value="Stomach pain">
+                            <option value="Acidity">
+                            <option value="Ulcers on tongue">
+                            <option value="Muscle wasting">
+                            <option value="Vomiting">
+                            <option value="Burning micturition">
+                            <option value="Spotting urination">
+                            <option value="Fatigue ">
+                            <option value="Weight gain">
+                            <option value="Anxiety ">
+                            <option value="Cold hands and feet">
+                            <option value="Weight loss">
+                            <option value="Restlessness ">
+                            <option value="Lethargy ">
+                            <option value="Patches in throat">
+                            <option value="Irregular sugar level">
+                            <option value="Cough ">
+                            <option value="High fever">
+                            <option value="Sunken eyes">
+                            <option value="Breathlessness ">
+                            <option value="Sweating ">
+                            <option value="Dehydration ">
+                            <option value="Indigestion ">
+                            <option value="Headache ">
+                            <option value="Yellowish skin">
+                            <option value="Dark urine">
+                            <option value="Nausea ">
+                            <option value="Loss of appetite">
+                            <option value="Pain behind the eyes">
+                            <option value="Back pain">
+                            <option value="Constipation ">
+                            <option value="Abdominal pain">
+                            <option value="Diarrhoea ">
+                            <option value="Mild fever">
+                            <option value="Yellow urine">
+                            <option value="Yellowing of eyes">
+                            <option value="Acute liver failure">
+                            <option value="Fluid overload">
+                            <option value="Swelling of stomach">
+                            <option value="Swelled lymph nodes">
+                            <option value="Malaise ">
+                            <option value="Blurred and distorted vision">
+                            <option value="Phlegm ">
+                            <option value="Throat irritation">
+                            <option value="Redness of eyes">
+                            <option value="Sinus pressure">
+                            <option value="Runny nose">
+                            <option value="Congestion ">
+                            <option value="Chest pain">
+                            <option value="Weakness in limbs">
+                            <option value="Fast heart rate">
+                            <option value="Pain during bowel movements">
+                            <option value="Pain in anal region">
+                            <option value="Bloody stool">
+                            <option value="Irritation in anus">
+                            <option value="Neck pain">
+                            <option value="Dizziness ">
+                            <option value="Cramps ">
+                            <option value="Bruising ">
+                            <option value="Obesity ">
+                            <option value="Swollen legs">
+                            <option value="Swollen blood vessels">
+                            <option value="Puffy face and eyes">
+                            <option value="Enlarged thyroid">
+                            <option value="Brittle nails">
+                            <option value="Swollen extremities">
+                            <option value="Excessive hunger">
+                            <option value="Extra marital contacts">
+                            <option value="Drying and tingling lips">
+                            <option value="Slurred speech">
+                            <option value="Knee pain">
+                            <option value="Hip joint pain">
+                            <option value="Muscle weakness">
+                            <option value="Stiff neck">
+                            <option value="Swelling joints">
+                            <option value="Movement stiffness">
+                            <option value="Spinning movements">
+                            <option value="Loss of balance">
+                            <option value="Unsteadiness ">
+                            <option value="Weakness of one body side">
+                            <option value="Loss of smell">
+                            <option value="Bladder discomfort">
+                            <option value="Foul smell of urine">
+                            <option value="Continuous feel of urine">
+                            <option value="Passage of gases">
+                            <option value="Internal itching">
+                            <option value="Toxic look (typhus)">
+                            <option value="Depression">
+                            <option value="Irritability ">
+                            <option value="Muscle pain">
+                            <option value="Altered sensorium">
+                            <option value="Red spots over body">
+                            <option value="Belly pain">
+                            <option value="Abnormal menstruation">
+                            <option value="Dyschromic patches">
+                            <option value="Watering from eyes">
+                            <option value="Increased appetite">
+                            <option value="Polyuria ">
+                            <option value="Family history">
+                            <option value="Mucoid sputum">
+                            <option value="Rusty sputum">
+                            <option value="Lack of concentration">
+                            <option value="Visual disturbances">
+                            <option value="Receiving blood transfusion">
+                            <option value="Receiving unsterile injections">
+                            <option value="Coma">
+                            <option value="Stomach bleeding">
+                            <option value="Distention of abdomen">
+                            <option value="History of alcohol consumption">
+                            <option value="Fluid overload">
+                            <option value="Blood in sputum">
+                            <option value="Prominent veins on calf">
+                            <option value="Palpitations">
+                            <option value="Painful walking">
+                            <option value="Pus filled pimples">
+                            <option value="Blackheads">
+                            <option value="Scarring">
+                            <option value="Skin peeling">
+                            <option value="Silver like dusting">
+                            <option value="Small dents in nails">
+                            <option value="Inflammatory nails">
+                            <option value="Blister">
+                            <option value="Red sore around nose">
+                            <option value="Yellow crust ooze">
+                        </datalist>
+                    </div>
+                    <div class="opt-2">
+                        <label for="country">Symptom No.2:</label>
+                        <input id="s2" name="Symptom2" placeholder="Symptoms2" type="text" class="validate"
+                            list="datalist2">
+                        <datalist id="datalist2" class="" datalist">
+
+                            <option value="Sm1" disabled selected class="selected">Symptoms1</option>
+                            <option value="Skin rash">
+                            <option value="Nodal skin eruptions">
+                            <option value="Continuous sneezing">
+                            <option value="Shivering">
+                            <option value="Chills">
+                            <option value="Joint pain">
+                            <option value="Stomach pain">
+                            <option value="Acidity">
+                            <option value="Ulcers on tongue">
+                            <option value="Muscle wasting">
+                            <option value="Vomiting">
+                            <option value="Burning micturition">
+                            <option value="Spotting urination">
+                            <option value="Fatigue ">
+                            <option value="Weight gain">
+                            <option value="Anxiety ">
+                            <option value="Cold hands and feet">
+                            <option value="Weight loss">
+                            <option value="Restlessness ">
+                            <option value="Lethargy ">
+                            <option value="Patches in throat">
+                            <option value="Irregular sugar level">
+                            <option value="Cough ">
+                            <option value="High fever">
+                            <option value="Sunken eyes">
+                            <option value="Breathlessness ">
+                            <option value="Sweating ">
+                            <option value="Dehydration ">
+                            <option value="Indigestion ">
+                            <option value="Headache ">
+                            <option value="Yellowish skin">
+                            <option value="Dark urine">
+                            <option value="Nausea ">
+                            <option value="Loss of appetite">
+                            <option value="Pain behind the eyes">
+                            <option value="Back pain">
+                            <option value="Constipation ">
+                            <option value="Abdominal pain">
+                            <option value="Diarrhoea ">
+                            <option value="Mild fever">
+                            <option value="Yellow urine">
+                            <option value="Yellowing of eyes">
+                            <option value="Acute liver failure">
+                            <option value="Fluid overload">
+                            <option value="Swelling of stomach">
+                            <option value="Swelled lymph nodes">
+                            <option value="Malaise ">
+                            <option value="Blurred and distorted vision">
+                            <option value="Phlegm ">
+                            <option value="Throat irritation">
+                            <option value="Redness of eyes">
+                            <option value="Sinus pressure">
+                            <option value="Runny nose">
+                            <option value="Congestion ">
+                            <option value="Chest pain">
+                            <option value="Weakness in limbs">
+                            <option value="Fast heart rate">
+                            <option value="Pain during bowel movements">
+                            <option value="Pain in anal region">
+                            <option value="Bloody stool">
+                            <option value="Irritation in anus">
+                            <option value="Neck pain">
+                            <option value="Dizziness ">
+                            <option value="Cramps ">
+                            <option value="Bruising ">
+                            <option value="Obesity ">
+                            <option value="Swollen legs">
+                            <option value="Swollen blood vessels">
+                            <option value="Puffy face and eyes">
+                            <option value="Enlarged thyroid">
+                            <option value="Brittle nails">
+                            <option value="Swollen extremities">
+                            <option value="Excessive hunger">
+                            <option value="Extra marital contacts">
+                            <option value="Drying and tingling lips">
+                            <option value="Slurred speech">
+                            <option value="Knee pain">
+                            <option value="Hip joint pain">
+                            <option value="Muscle weakness">
+                            <option value="Stiff neck">
+                            <option value="Swelling joints">
+                            <option value="Movement stiffness">
+                            <option value="Spinning movements">
+                            <option value="Loss of balance">
+                            <option value="Unsteadiness ">
+                            <option value="Weakness of one body side">
+                            <option value="Loss of smell">
+                            <option value="Bladder discomfort">
+                            <option value="Foul smell of urine">
+                            <option value="Continuous feel of urine">
+                            <option value="Passage of gases">
+                            <option value="Internal itching">
+                            <option value="Toxic look (typhus)">
+                            <option value="Depression">
+                            <option value="Irritability ">
+                            <option value="Muscle pain">
+                            <option value="Altered sensorium">
+                            <option value="Red spots over body">
+                            <option value="Belly pain">
+                            <option value="Abnormal menstruation">
+                            <option value="Dyschromic patches">
+                            <option value="Watering from eyes">
+                            <option value="Increased appetite">
+                            <option value="Polyuria ">
+                            <option value="Family history">
+                            <option value="Mucoid sputum">
+                            <option value="Rusty sputum">
+                            <option value="Lack of concentration">
+                            <option value="Visual disturbances">
+                            <option value="Receiving blood transfusion">
+                            <option value="Receiving unsterile injections">
+                            <option value="Coma">
+                            <option value="Stomach bleeding">
+                            <option value="Distention of abdomen">
+                            <option value="History of alcohol consumption">
+                            <option value="Fluid overload">
+                            <option value="Blood in sputum">
+                            <option value="Prominent veins on calf">
+                            <option value="Palpitations">
+                            <option value="Painful walking">
+                            <option value="Pus filled pimples">
+                            <option value="Blackheads">
+                            <option value="Scarring">
+                            <option value="Skin peeling">
+                            <option value="Silver like dusting">
+                            <option value="Small dents in nails">
+                            <option value="Inflammatory nails">
+                            <option value="Blister">
+                            <option value="Red sore around nose">
+                            <option value="Yellow crust ooze">
+                        </datalist>
+                    </div>
+                    <div class="opt-3">
+                        <label for="country">Symptom No.3:</label>
+                        <input id="s3" name="Symptom3" placeholder="Symptoms3" type="text" class="validate"
+                            list="datalist3">
+                        <datalist id="datalist3" class="" datalist">
+
+                            <option value="Sm1" disabled selected class="selected">Symptoms1</option>
+                            <option value="Skin rash">
+                            <option value="Nodal skin eruptions">
+                            <option value="Continuous sneezing">
+                            <option value="Shivering">
+                            <option value="Chills">
+                            <option value="Joint pain">
+                            <option value="Stomach pain">
+                            <option value="Acidity">
+                            <option value="Ulcers on tongue">
+                            <option value="Muscle wasting">
+                            <option value="Vomiting">
+                            <option value="Burning micturition">
+                            <option value="Spotting urination">
+                            <option value="Fatigue ">
+                            <option value="Weight gain">
+                            <option value="Anxiety ">
+                            <option value="Cold hands and feet">
+                            <option value="Weight loss">
+                            <option value="Restlessness ">
+                            <option value="Lethargy ">
+                            <option value="Patches in throat">
+                            <option value="Irregular sugar level">
+                            <option value="Cough ">
+                            <option value="High fever">
+                            <option value="Sunken eyes">
+                            <option value="Breathlessness ">
+                            <option value="Sweating ">
+                            <option value="Dehydration ">
+                            <option value="Indigestion ">
+                            <option value="Headache ">
+                            <option value="Yellowish skin">
+                            <option value="Dark urine">
+                            <option value="Nausea ">
+                            <option value="Loss of appetite">
+                            <option value="Pain behind the eyes">
+                            <option value="Back pain">
+                            <option value="Constipation ">
+                            <option value="Abdominal pain">
+                            <option value="Diarrhoea ">
+                            <option value="Mild fever">
+                            <option value="Yellow urine">
+                            <option value="Yellowing of eyes">
+                            <option value="Acute liver failure">
+                            <option value="Fluid overload">
+                            <option value="Swelling of stomach">
+                            <option value="Swelled lymph nodes">
+                            <option value="Malaise ">
+                            <option value="Blurred and distorted vision">
+                            <option value="Phlegm ">
+                            <option value="Throat irritation">
+                            <option value="Redness of eyes">
+                            <option value="Sinus pressure">
+                            <option value="Runny nose">
+                            <option value="Congestion ">
+                            <option value="Chest pain">
+                            <option value="Weakness in limbs">
+                            <option value="Fast heart rate">
+                            <option value="Pain during bowel movements">
+                            <option value="Pain in anal region">
+                            <option value="Bloody stool">
+                            <option value="Irritation in anus">
+                            <option value="Neck pain">
+                            <option value="Dizziness ">
+                            <option value="Cramps ">
+                            <option value="Bruising ">
+                            <option value="Obesity ">
+                            <option value="Swollen legs">
+                            <option value="Swollen blood vessels">
+                            <option value="Puffy face and eyes">
+                            <option value="Enlarged thyroid">
+                            <option value="Brittle nails">
+                            <option value="Swollen extremities">
+                            <option value="Excessive hunger">
+                            <option value="Extra marital contacts">
+                            <option value="Drying and tingling lips">
+                            <option value="Slurred speech">
+                            <option value="Knee pain">
+                            <option value="Hip joint pain">
+                            <option value="Muscle weakness">
+                            <option value="Stiff neck">
+                            <option value="Swelling joints">
+                            <option value="Movement stiffness">
+                            <option value="Spinning movements">
+                            <option value="Loss of balance">
+                            <option value="Unsteadiness ">
+                            <option value="Weakness of one body side">
+                            <option value="Loss of smell">
+                            <option value="Bladder discomfort">
+                            <option value="Foul smell of urine">
+                            <option value="Continuous feel of urine">
+                            <option value="Passage of gases">
+                            <option value="Internal itching">
+                            <option value="Toxic look (typhus)">
+                            <option value="Depression">
+                            <option value="Irritability ">
+                            <option value="Muscle pain">
+                            <option value="Altered sensorium">
+                            <option value="Red spots over body">
+                            <option value="Belly pain">
+                            <option value="Abnormal menstruation">
+                            <option value="Dyschromic patches">
+                            <option value="Watering from eyes">
+                            <option value="Increased appetite">
+                            <option value="Polyuria ">
+                            <option value="Family history">
+                            <option value="Mucoid sputum">
+                            <option value="Rusty sputum">
+                            <option value="Lack of concentration">
+                            <option value="Visual disturbances">
+                            <option value="Receiving blood transfusion">
+                            <option value="Receiving unsterile injections">
+                            <option value="Coma">
+                            <option value="Stomach bleeding">
+                            <option value="Distention of abdomen">
+                            <option value="History of alcohol consumption">
+                            <option value="Fluid overload">
+                            <option value="Blood in sputum">
+                            <option value="Prominent veins on calf">
+                            <option value="Palpitations">
+                            <option value="Painful walking">
+                            <option value="Pus filled pimples">
+                            <option value="Blackheads">
+                            <option value="Scarring">
+                            <option value="Skin peeling">
+                            <option value="Silver like dusting">
+                            <option value="Small dents in nails">
+                            <option value="Inflammatory nails">
+                            <option value="Blister">
+                            <option value="Red sore around nose">
+                            <option value="Yellow crust ooze">
+                        </datalist>
+                    </div>
+                </div>
+                <button class="bubbly-button">Predict</button>
+            </div>
+
+            <div class="medicine-result">
+                <p>Result: <span></span></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="./java.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicination</title>
+  <link rel="icon" href="{{ url_for('static',filename='images/icon1.png') }}">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/mainpage.css') }}">
+</head>
+
+<body>
+  <header>
+    <!-- <img class="logo" src="images/logo1.jpg" alt="logo">   ///jpg logo hide kelay -->
+    <h1 class="logo">
+      <a href="{{ url_for('Landing_page') }}">Medicination</a>
+    </h1>
+
+    <a class="cta" href="{{ url_for('check_page') }}"><button>Let's Check</button></a>
+  </header>
+
+  <div id="body">
+    <h1>Enter Your Symptoms</h1>
+    <div>
+      <form method="POST" action="/predict" onsubmit="return showSelectedValues()">
+        <div class="hiddenCB">
+          <h3>Make your choice(s)</h3>
+          <div>
+          
+          
+            <input type="checkbox" name="choice" id="cb1" value="Skin rash" />
+            <label for="cb1">Skin rash</label>
+          
+          
+            <input type="checkbox" name="choice" id="cb2" value="Nodal skin eruptions" />
+            <label for="cb2">Nodal skin eruptions</label>
+          
+          
+            <input type="checkbox" name="choice" id="cb3" value="Continuous sneezing" />
+            <label for="cb3">Continuous sneezing</label>
+          
+          
+            <input type="checkbox" name="choice" id="cb4" value="Shivering" />
+            <label for="cb4">Shivering</label>
+          
+            <input type="checkbox" name="choice" id="cb5" value="Chills" />
+            <label for="cb5">Chills</label>
+          
+            <input type="checkbox" name="choice" id="cb7" value="Stomach pain" />
+            <label for="cb7">Stomach pain</label>
+          
+            <input type="checkbox" name="choice" id="cb8" value="Acidity" />
+            <label for="cb8">Acidity</label>
+          
+            <input type="checkbox" name="choice" id="cb9" value="Ulcers on tongue" />
+            <label for="cb9">Ulcers on tongue</label>
+          
+            <input type="checkbox" name="choice" id="cb10" value="Muscle wasting" />
+            <label for="cb10">Muscle wasting</label>
+          
+            <input type="checkbox" name="choice" id="cb11" value="Vomiting" />
+            <label for="cb11">Vomiting</label>
+          
+            <input type="checkbox" name="choice" id="cb12" value="Burning micturition" />
+            <label for="cb12">Burning micturition</label>
+          
+            <input type="checkbox" name="choice" id="cb13" value="Spotting urination" />
+            <label for="cb13">Spotting urination</label>
+          
+            <input type="checkbox" name="choice" id="cb14" value="Fatigue" />
+            <label for="cb14">Fatigue</label>
+          
+            <input type="checkbox" name="choice" id="cb15" value="Weight gain" />
+            <label for="cb15">Weight gain</label>
+          
+            <input type="checkbox" name="choice" id="cb16" value="Anxiety" />
+            <label for="cb16">Anxiety</label>
+          
+            <input type="checkbox" name="choice" id="cb17" value="Cold hands and feet" />
+            <label for="cb17">Cold hands and feet</label>
+          
+            <input type="checkbox" name="choice" id="cb18" value="Weight loss" />
+            <label for="cb18">Weight loss</label>
+          
+            <input type="checkbox" name="choice" id="cb19" value="Restlessness " />
+            <label for="cb19">Restlessness </label>
+          
+            <input type="checkbox" name="choice" id="cb20" value="Lethargy  " />
+            <label for="cb20">Lethargy </label>
+          
+            <input type="checkbox" name="choice" id="cb21" value="Patches in throat  " />
+            <label for="cb21">Patches in throat </label>
+          
+            <input type="checkbox" name="choice" id="cb22" value="Irregular sugar level  " />
+            <label for="cb22">Irregular sugar level </label>
+          
+            <input type="checkbox" name="choice" id="cb23" value="Cough" />
+            <label for="cb23">Cough</label>
+          
+            <input type="checkbox" name="choice" id="cb24" value="High fever" />
+            <label for="cb24">High fever</label>
+          
+            <input type="checkbox" name="choice" id="cb25" value="Sunken eyes" />
+            <label for="cb25">Sunken eyes</label>
+          
+            <input type="checkbox" name="choice" id="cb26" value="Breathlessness" />
+            <label for="cb26">Breathlessness</label>
+          
+            <input type="checkbox" name="choice" id="cb27" value="Sweating" />
+            <label for="cb27">Sweating</label>
+          
+            <input type="checkbox" name="choice" id="cb28" value="Dehydration" />
+            <label for="cb28">Dehydration</label>
+          
+            <input type="checkbox" name="choice" id="cb29" value="Indigestion" />
+            <label for="cb29">Indigestion</label>
+          
+            <input type="checkbox" name="choice" id="cb30" value="Headache" />
+            <label for="cb30">Headache</label>
+          
+            <input type="checkbox" name="choice" id="cb31" value="Yellowish skin" />
+            <label for="cb31">Yellowish skin</label>
+          
+            <input type="checkbox" name="choice" id="cb32" value="Dark urine" />
+            <label for="cb32">Dark urine</label>
+          
+            <input type="checkbox" name="choice" id="cb33" value="Nausea" />
+            <label for="cb33">Nausea</label>
+          
+            <input type="checkbox" name="choice" id="cb34" value="Loss of appetite" />
+            <label for="cb34">Loss of appetite</label>
+          
+            <input type="checkbox" name="choice" id="cb35" value="Pain behind the eyes" />
+            <label for="cb35">Pain behind the eyes</label>
+          
+            <input type="checkbox" name="choice" id="cb36" value="Back pain" />
+            <label for="cb36">Back pain</label>
+          
+            <input type="checkbox" name="choice" id="cb37" value="Constipation" />
+            <label for="cb37">Constipation</label>
+          
+            <input type="checkbox" name="choice" id="cb38" value="Abdominal pain" />
+            <label for="cb38">Abdominal pain</label>
+          
+            <input type="checkbox" name="choice" id="cb39" value="Diarrhoea" />
+            <label for="cb39">Diarrhoea</label>
+          
+            <input type="checkbox" name="choice" id="cb40" value="Mild fever" />
+            <label for="cb40">Mild fever</label>
+          
+            <input type="checkbox" name="choice" id="cb41" value="Yellow urine" />
+            <label for="cb41">Yellow urine</label>
+          
+            <input type="checkbox" name="choice" id="cb42" value="Yellowing of eyes" />
+            <label for="cb42">Yellowing of eyes</label>
+          
+            <input type="checkbox" name="choice" id="cb43" value="Acute liver failure" />
+            <label for="cb43">Acute liver failure</label>
+          
+            <input type="checkbox" name="choice" id="cb44" value="Fluid overload" />
+            <label for="cb44">Fluid overload</label>
+          
+            <input type="checkbox" name="choice" id="cb45" value="Swelling of stomach" />
+            <label for="cb45">Swelling of stomach</label>
+          
+            <input type="checkbox" name="choice" id="cb46" value="Swelled lymph nodes" />
+            <label for="cb46">Swelled lymph nodes</label>
+          
+            <input type="checkbox" name="choice" id="cb47" value="Malaise" />
+            <label for="cb47">Malaise</label>
+          
+            <input type="checkbox" name="choice" id="cb48" value="Blurred and distorted vision" />
+            <label for="cb48">Blurred and distorted vision</label>
+          
+            <input type="checkbox" name="choice" id="cb49" value="Phlegm" />
+            <label for="cb49">Phlegm</label>
+          
+            <input type="checkbox" name="choice" id="cb50" value="Throat irritation" />
+            <label for="cb50">Throat irritation</label>
+          
+            <input type="checkbox" name="choice" id="cb51" value="Redness of eyes" />
+            <label for="cb51">Redness of eyes</label>
+          
+            <input type="checkbox" name="choice" id="cb52" value="Sinus pressure" />
+            <label for="cb52">Sinus pressure</label>
+          
+            <input type="checkbox" name="choice" id="cb53" value="Runny nose" />
+            <label for="cb53">Runny nose</label>
+          
+            <input type="checkbox" name="choice" id="cb54" value="Congestion" />
+            <label for="cb54">Congestion</label>
+          
+            <input type="checkbox" name="choice" id="cb55" value="Chest pain" />
+            <label for="cb55">Chest pain</label>
+          
+            <input type="checkbox" name="choice" id="cb56" value="Weakness in limbs" />
+            <label for="cb56">Weakness in limbs</label>
+          
+            <input type="checkbox" name="choice" id="cb57" value="Fast heart rate" />
+            <label for="cb57">Fast heart rate</label>
+          
+            <input type="checkbox" name="choice" id="cb58" value="Pain during bowel movements" />
+            <label for="cb58">Pain during bowel movements</label>
+          
+            <input type="checkbox" name="choice" id="cb59" value="Pain in anal region" />
+            <label for="cb59">Pain in anal region</label>
+          
+            <input type="checkbox" name="choice" id="cb60" value="Bloody stool" />
+            <label for="cb60">Bloody stool</label>
+          
+            <input type="checkbox" name="choice" id="cb61" value="Irritation in anus" />
+            <label for="cb61">Irritation in anus</label>
+          
+            <input type="checkbox" name="choice" id="cb62" value="Neck pain" />
+            <label for="cb62">Neck pain</label>
+          
+            <input type="checkbox" name="choice" id="cb63" value="Dizziness" />
+            <label for="cb63">Dizziness</label>
+          
+            <input type="checkbox" name="choice" id="cb64" value="Cramps" />
+            <label for="cb64">Cramps</label>
+          
+            <input type="checkbox" name="choice" id="cb65" value="Bruising" />
+            <label for="cb65">Bruising</label>
+          
+            <input type="checkbox" name="choice" id="cb66" value="Obesity" />
+            <label for="cb66">Obesity</label>
+          
+            <input type="checkbox" name="choice" id="cb67" value="Swollen legs" />
+            <label for="cb67">Swollen legs</label>
+          
+            <input type="checkbox" name="choice" id="cb68" value="Swollen blood vessels" />
+            <label for="cb68">Swollen blood vessels</label>
+          
+            <input type="checkbox" name="choice" id="cb69" value="Puffy face and eyes" />
+            <label for="cb69">Puffy face and eyes</label>
+          
+            <input type="checkbox" name="choice" id="cb70" value="Enlarged thyroid" />
+            <label for="cb70">Enlarged thyroid</label>
+          
+            <input type="checkbox" name="choice" id="cb71" value="Brittle nails" />
+            <label for="cb71">Brittle nails</label>
+          
+            <input type="checkbox" name="choice" id="cb72" value="Swollen extremities" />
+            <label for="cb72">Swollen extremities</label>
+          
+            <input type="checkbox" name="choice" id="cb73" value="Excessive hunger" />
+            <label for="cb73">Excessive hunger</label>
+          
+            <input type="checkbox" name="choice" id="cb74" value="Extra marital contacts" />
+            <label for="cb74">Extra marital contacts</label>
+          
+            <input type="checkbox" name="choice" id="cb75" value="Drying and tingling lips" />
+            <label for="cb75">Drying and tingling lips</label>
+          
+            <input type="checkbox" name="choice" id="cb76" value="Slurred speech" />
+            <label for="cb76">Slurred speech</label>
+          
+            <input type="checkbox" name="choice" id="cb77" value="Knee pain" />
+            <label for="cb77">Knee pain</label>
+          
+            <input type="checkbox" name="choice" id="cb78" value="Hip joint pain" />
+            <label for="cb78">Hip joint pain</label>
+          
+            <input type="checkbox" name="choice" id="cb79" value="Muscle weakness" />
+            <label for="cb79">Muscle weakness</label>
+          
+            <input type="checkbox" name="choice" id="cb80" value="Stiff neck" />
+            <label for="cb80">Stiff neck</label>
+          
+            <input type="checkbox" name="choice" id="cb81" value="Swelling joints" />
+            <label for="cb81">Swelling joints</label>
+          
+            <input type="checkbox" name="choice" id="cb82" value="Movement stiffness" />
+            <label for="cb82">Movement stiffness</label>
+          
+            <input type="checkbox" name="choice" id="cb83" value="Spinning movements" />
+            <label for="cb83">Spinning movements</label>
+          
+            <input type="checkbox" name="choice" id="cb84" value="Loss of balance" />
+            <label for="cb84">Loss of balance</label>
+          
+            <input type="checkbox" name="choice" id="cb85" value="Unsteadiness" />
+            <label for="cb85">Unsteadiness</label>
+          
+            <input type="checkbox" name="choice" id="cb86" value="Weakness of one body side" />
+            <label for="cb86">Weakness of one body side</label>
+          
+            <input type="checkbox" name="choice" id="cb87" value="Loss of smell" />
+            <label for="cb87">Loss of smell</label>
+          
+            <input type="checkbox" name="choice" id="cb88" value="Bladder discomfort" />
+            <label for="cb88">Bladder discomfort</label>
+          
+            <input type="checkbox" name="choice" id="cb89" value="Foul smell of urine" />
+            <label for="cb89">Foul smell of urine</label>
+          
+            <input type="checkbox" name="choice" id="cb90" value="Continuous feel of urine" />
+            <label for="cb90">Continuous feel of urine</label>
+          
+            <input type="checkbox" name="choice" id="cb91" value="Passage of gases" />
+            <label for="cb91">Passage of gases</label>
+          
+            <input type="checkbox" name="choice" id="cb92" value="Internal itching" />
+            <label for="cb92">Internal itching</label>
+          
+            <input type="checkbox" name="choice" id="cb93" value="Toxic look (typhus)" />
+            <label for="cb93">Toxic look (typhus)</label>
+          
+            <input type="checkbox" name="choice" id="cb94" value="Depression" />
+            <label for="cb94">Depression</label>
+          
+            <input type="checkbox" name="choice" id="cb95" value="Irritability" />
+            <label for="cb95">Irritability</label>
+          
+            <input type="checkbox" name="choice" id="cb96" value="Muscle pain" />
+            <label for="cb96">Muscle pain</label>
+          
+            <input type="checkbox" name="choice" id="cb97" value="Altered sensorium" />
+            <label for="cb97">Altered sensorium</label>
+          
+            <input type="checkbox" name="choice" id="cb98" value="Red spots over body" />
+            <label for="cb98">Red spots over body</label>
+          
+            <input type="checkbox" name="choice" id="cb99" value="Belly pain" />
+            <label for="cb99">Belly pain</label>
+          
+            <input type="checkbox" name="choice" id="cb100" value="Abnormal menstruation" />
+            <label for="cb100">Abnormal menstruation</label>
+          
+            <input type="checkbox" name="choice" id="cb101" value="Dyschromic patches" />
+            <label for="cb101">Dyschromic patches</label>
+          
+            <input type="checkbox" name="choice" id="cb102" value="Watering from eyes" />
+            <label for="cb102">Watering from eyes</label>
+          
+            <input type="checkbox" name="choice" id="cb103" value="Increased appetite" />
+            <label for="cb103">Increased appetite</label>
+          
+            <input type="checkbox" name="choice" id="cb104" value="Polyuria" />
+            <label for="cb104">Polyuria</label>
+          
+            <input type="checkbox" name="choice" id="cb105" value="Family history" />
+            <label for="cb105">Family history</label>
+          
+            <input type="checkbox" name="choice" id="cb106" value="Mucoid sputum" />
+            <label for="cb106">Mucoid sputum</label>
+          
+            <input type="checkbox" name="choice" id="cb107" value="Rusty sputum" />
+            <label for="cb107">Rusty sputum</label>
+          
+            <input type="checkbox" name="choice" id="cb108" value="Lack of concentration" />
+            <label for="cb108">Lack of concentration</label>
+          
+            <input type="checkbox" name="choice" id="cb109" value="Visual disturbances" />
+            <label for="cb109">Visual disturbances</label>
+          
+            <input type="checkbox" name="choice" id="cb110" value="Receiving blood transfusion" />
+            <label for="cb110">Receiving blood transfusion</label>
+          
+            <input type="checkbox" name="choice" id="cb111" value="Receiving unsterile injections" />
+            <label for="cb111">Receiving unsterile injections</label>
+          
+            <input type="checkbox" name="choice" id="cb112" value="Coma" />
+            <label for="cb112">Coma</label>
+          
+            <input type="checkbox" name="choice" id="cb113" value="Stomach bleeding" />
+            <label for="cb113">Stomach bleeding</label>
+          
+            <input type="checkbox" name="choice" id="cb114" value="Distention of abdomen" />
+            <label for="cb114">Distention of abdomen</label>
+          
+            <input type="checkbox" name="choice" id="cb115" value="History of alcohol consumption" />
+            <label for="cb115">History of alcohol consumption</label>
+          
+            <input type="checkbox" name="choice" id="cb116" value="Fluid overload" />
+            <label for="cb116">Fluid overload</label>
+          
+            <input type="checkbox" name="choice" id="cb117" value="Blood in sputum" />
+            <label for="cb117">Blood in sputum</label>
+          
+            <input type="checkbox" name="choice" id="cb118" value="Prominent veins on calf" />
+            <label for="cb118">Prominent veins on calf</label>
+          
+            <input type="checkbox" name="choice" id="cb119" value="Palpitations" />
+            <label for="cb119">Palpitations</label>
+          
+            <input type="checkbox" name="choice" id="cb120" value="Painful walking" />
+            <label for="cb120">Painful walking</label>
+          
+            <input type="checkbox" name="choice" id="cb121" value="Pus filled pimples" />
+            <label for="cb121">Pus filled pimples</label>
+          
+            <input type="checkbox" name="choice" id="cb122" value="Blackheads" />
+            <label for="cb122">Blackheads</label>
+          
+            <input type="checkbox" name="choice" id="cb123" value="Scarring" />
+            <label for="cb123">Scarring</label>
+          
+            <input type="checkbox" name="choice" id="cb124" value="Skin peeling" />
+            <label for="cb124">Skin peeling</label>
+          
+            <input type="checkbox" name="choice" id="cb125" value="Silver like dusting" />
+            <label for="cb125">Silver like dusting</label>
+          
+            <input type="checkbox" name="choice" id="cb126" value="Small dents in nails" />
+            <label for="cb126">Small dents in nails</label>
+          
+            <input type="checkbox" name="choice" id="cb127" value="Inflammatory nails" />
+            <label for="cb127">Inflammatory nails</label>
+          
+            <input type="checkbox" name="choice" id="cb128" value="Blister" />
+            <label for="cb128">Blister</label>
+          
+            <input type="checkbox" name="choice" id="cb129" value="Red sore around nose" />
+            <label for="cb129">Red sore around nose</label>
+          
+            <input type="checkbox" name="choice" id="cb130" value="Yellow crust ooze" />
+            <label for="cb130">Yellow crust ooze</label>
+          
+          </div>
+
+
+        </div>
+        <br>
+        <button type="submit">Submit</button>
+      </form>
+      <br>
+      <!-- For output display -->
+      {% if pred %}
+      <h2>Entered symptoms:</h2>
+      {% for symptom in symptoms %}
+      <p>{{ symptom }}</p>
+      {% endfor %}
+      <br>
+      <h2>Prediction:</h2>
+      <p>{{ pred }}</p>
+      <br>
+      {% if accuracy %}
+      <h2>Accuracy:</h2>
+      <p>{{ accuracy }}</p>
+      {% endif %} {% else %}
+      {% endif %}
+    </div>
+    <script>
+      function showSelectedValues() {
+        let selectedValues = [];
+        const checkboxes = document.querySelectorAll(
+          'input[name="choice"]:checked'
+        );
+        for (let i = 0; i < checkboxes.length; i++) {
+          selectedValues.push(checkboxes[i].value);
+        }
+        if (selectedValues.length === 0) {
+          alert("Please select at least one value.");
+          return false;
+        } else {
+          alert("Selected values: " + selectedValues.join(", "));
+          return true;
+        }
+      }
+    </script>
+</body>
+
+</html>

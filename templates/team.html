@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicination</title>
+    <link rel="icon" href="{{ url_for('static',filename='images/icon1.png') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+</head>
+<body>
+    <header>
+        <!-- <img class="logo" src="images/logo1.jpg" alt="logo">   ///jpg logo hide kelay -->
+        <h1 class="logo" >
+            <a href="{{ url_for('Landing_page') }}">Medicination</a>
+        </h1>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="{{ url_for('about_page') }}">About</a></li>
+                <li><a href="{{ url_for('team_page') }}">Team</a></li>
+                <li><a href="{{ url_for('contact_page') }}">Contact</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="{{ url_for('check_page') }}"><button>Let's Check</button></a>
+    </header>
+
+    <div id="body_2">
+        <div class="sect">
+            <div class="container">
+                <div class="title">
+                    <h1>Team</h1>
+                </div>
+                
+<br>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="{{ url_for('static',filename='images/inde.jpg') }} " alt="Pratik" style="width:100%">
+      <div class="container">
+        <h2>Pratik Baisware</h2>
+        <p class="title">Machine learnig Model</p>
+        <p>f sf</p>
+        <p>pratikbaisware@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src=""{{ url_for('static',filename='images/inde.jpg') }} "" alt="Aditya" style="width:100%">
+      <div class="container">
+        <h2>Aditya Hargane </h2>
+        <p class="title">Front end </p>
+        <p>hi </p>
+        <p>adihargane@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src=""{{ url_for('static',filename='images/index3.jpg') }} "" alt="John" style="width:100%">
+      <div class="container">
+        <h2>Vamsi Avula</h2>
+        <p class="title">Back end </p>
+        <p>HI THere !</p>
+        <p>vamsi7905@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+                             
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+        <footer class="footer">
+            <div class="container_foot">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>company</h4>
+                        <ul>
+                            <li><a href="{{ url_for('about_page') }}">about us</a></li>
+                            <li><a href="{{ url_for('team_page') }}">team</a></li>
+                        </ul>
+                    </div>
+     
+     
+                    <div class="footer-col">
+                        <h4>follow us</h4>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/adihargane_"><i class="fab fa-twitter"></i></a>
+                            <a href="https://instagram.com/the_pratzs_pb7?utm_medium=copy_link"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/vamsi-avula-390431219/"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </footer>
+    <div id="footer"></div>
+</body>
+</html>

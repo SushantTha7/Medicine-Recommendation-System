@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicination</title>
+    <link rel="icon" href="{{ url_for('static',filename='images/icon1.png') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+</head>
+<body>
+    <header>
+        <!-- <img class="logo" src="images/logo1.jpg" alt="logo">   ///jpg logo hide kelay -->
+        <h1 class="logo" >
+            <a href="{{ url_for('Landing_page') }}">Medicination</a>
+        </h1>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="{{ url_for('about_page') }}">About</a></li>
+                <li><a href="{{ url_for('team_page') }}">Team</a></li>
+                <li><a href="{{ url_for('contact_page') }}">Contact</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="{{ url_for('check_page') }}"><button>Let's Check</button></a>
+    </header>
+
+    <div id="body_2">
+        <div class="sect">
+            <div class="container">
+                <div class="title">
+                    <h1>About Us</h1>
+                </div>
+                <div class="content">
+                    <div class="article">
+                        <h2>
+                            OUR AIM
+                        </h2>
+                        <p>
+                            To design and implement a system that will recommend medicine according to the symptoms using Machine Learning Python and Flask FrameWork.
+                        </p>
+    
+                        <h2>
+                            PROBLEM DEFINATION
+                        </h2>
+                        <p>
+                            A vast amount of clinical data scattered across different sites on the Internet hinders users from finding helpful information for their well-being improvement. Besides, the overload of medical information (e.g., on drugs, medical tests, and treatment suggestions) have brought many difficulties to medical professionals in making patient-oriented decisions. These issues raise the need to apply recommender systems in the healthcare domain to help both, end-users and medical professionals, make more efficient and accurate health-related decisions.
+                        </p>
+
+                        <h2>
+                            OBJECTIVE
+                        </h2>
+                        <P>
+                            Our review suggests to extend the existing solutions by adding recommendations for the dosage of drugs, as well as building highly scalable solutions.
+                        </P>
+
+
+                        <div class="button">
+                             <a href="{{ url_for('check_page') }}">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+        <footer class="footer">
+            <div class="container_foot">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>company</h4>
+                        <ul>
+                            <li><a href="{{ url_for('about_page') }}">about us</a></li>
+                            <li><a href="{{ url_for('team_page') }}">team</a></li>
+                        </ul>
+                    </div>
+     
+     
+                    <div class="footer-col">
+                        <h4>follow us</h4>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/adihargane_"><i class="fab fa-twitter"></i></a>
+                            <a href="https://instagram.com/the_pratzs_pb7?utm_medium=copy_link"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/vamsi-avula-390431219/"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </footer>
+    <div id="footer"></div>
+</body>
+</html>

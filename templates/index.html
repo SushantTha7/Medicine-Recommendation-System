@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicination</title>
+    <link rel="icon" href="{{ url_for('static',filename='images/icon1.png') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/mainpage.css') }}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #005f73;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin-left: 20px;
+            color: #333;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #28a745;
+        }
+
+        .cta button {
+            background-color: #28a745;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta button:hover {
+            background-color: #218838;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 100px 20px;
+            background-color: #e9f5ec;
+        }
+
+        .hero-section h2 {
+            font-size: 36px;
+            color: #333;
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            color: #555;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .hero-section a {
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #005f73;
+            color: white;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-section a:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static',filename='images/logo.png') }}" alt="logo">
+            <h1><a href="{{ url_for('Landing_page') }}">Medicination</a></h1>
+        </div>
+        <nav>
+            {% if session.logged_in %}
+            <a class="cta" href="{{ url_for('check_page') }}"><button>Let's Check</button></a>
+            <a class="cta" href="{{ url_for('history') }}"><button>History</button></a>
+            <a href="/logout">Logout</a>
+            {% else %}
+            <a href="/register">Register</a>
+            <a href="/login">Login</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <h2>Welcome to Medicination</h2>
+        <p>Medicination is your trusted companion in managing your medications and medical history. Our platform provides a simple and reliable way to track your medication schedule, receive timely reminders, and stay updated with your health records, ensuring you never miss an important dose.</p>
+        <a href="{{ url_for('login') }}">Get Started</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Medicination. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

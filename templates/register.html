@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Medicination</title>
+    <link rel="icon" href="{{ url_for('static',filename='images/icon1.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/login.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo a {
+            text-decoration: none;
+            font-size: 36px;
+            font-weight: bold;
+            color: #005f73;
+        }
+
+        .register-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            /* Constrain max width */
+            box-sizing: border-box;
+            /* Ensure padding is included in the width */
+            text-align: center;
+        }
+
+        .register-form h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .inputbox {
+            position: relative;
+            margin-bottom: 20px;
+            width: 100%;
+            /* Ensure input boxes take full container width */
+            box-sizing: border-box;
+        }
+
+        .inputbox ion-icon {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #aaa;
+        }
+
+        .inputbox input {
+            width: 100%;
+            /* Input fields will take up the full width of their container */
+            padding: 10px 10px 10px 40px;
+            /* Add padding to prevent text from overlapping with icon */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            box-sizing: border-box;
+            /* Include padding in width calculations */
+        }
+
+        .inputbox label {
+            position: absolute;
+            top: 10px;
+            left: 40px;
+            /* Adjust label to avoid overlapping with the icon */
+            color: #aaa;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+
+        .inputbox input:focus~label,
+        .inputbox input:valid~label {
+            top: -20px;
+            left: 40px;
+            color: #333;
+            font-size: 12px;
+        }
+
+        button {
+            width: 100%;
+            /* Ensure button takes full width */
+            padding: 10px;
+            background-color: #005f73;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .register {
+            margin-top: 15px;
+        }
+
+        .register p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .register p a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .register p a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">
+            <a href="{{ url_for('Landing_page') }}">Medicination</a>
+        </h1>
+    </header>
+
+    <section class="register-form">
+        <h2>Register</h2>
+        <form method="POST" action="/register">
+            <div class="inputbox">
+                <ion-icon name="person-outline"></ion-icon>
+                <input type="text" name="name" required />
+                <label for="name">Name</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                <input type="email" name="email" required />
+                <label for="email">Email</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="call-outline"></ion-icon>
+                <input type="text" name="phone" required />
+                <label for="phone">Phone Number</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="home-outline"></ion-icon>
+                <input type="text" name="address" required />
+                <label for="address">Address</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" name="password" required />
+                <label for="password">Password</label>
+            </div>
+            <button type="submit">Register</button>
+            <div class="register">
+                <p>Already have an account? <a href="/login">Login</a></p>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Medicination. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
