@@ -155,30 +155,46 @@ def logout():
 @application.route('/predict', methods=['POST', 'GET'])
 def predict():
     if request.method == 'POST':
-        col = x_test.columns
-        inputt = [str(x) for x in request.form.values()]
+        if 'user_id' not in session:
+            flash("Please log in to use this feature.")
+            return redirect(url_for('login'))
 
-        b = [0]*132
+        user_id = session['user_id']  # Retrieve user_id from session
+
+        # Load test data and model
+        test = pd.read_csv("test_data.csv")
+        x_test = test.drop('prognosis', axis=1)
+        y_test = test['prognosis']
+
+        col = x_test.columns
+        inputt = request.form.getlist('choice[]')  # Retrieve all selected symptoms
+
+        # Check if all the input symptoms are valid
+        if not all(symptom in col for symptom in inputt):
+            return render_template('letscheck.html', pred="No symptoms found")
+
+        b = [0] * 132
         for x in range(0, 132):
             for y in inputt:
-                if (col[x] == y):
+                if col[x] == y:
                     b[x] = 1
-        b = np.array(b)
-        b = b.reshape(1, 132)
-        prediction = model.predict(b)
-        prediction = prediction[0]
-        print(prediction)
+        b = np.array(b).reshape(1, 132)
+        prediction = model.predict(b)[0]
+
+        # Calculate the accuracy score
+        accuracy = accuracy_score(y_test, model.predict(x_test))
 
         # Store the prediction in the database
-        cur = mysql.connection.cursor()
-        cur.execute('INSERT INTO history_table (user_id, symptoms, prediction) VALUES (%s, %s, %s)',
-                    (1, inputt, prediction))  # assuming user_id=1 for now
-        mysql.connection.commit()
+        cur = conn.cursor()
+        cur.execute(
+            'INSERT INTO history_table (symptoms, prediction, user_id) VALUES (%s, %s, %s)',
+            (str(inputt), prediction, user_id)
+        )
+        conn.commit()
         cur.close()
 
-    return render_template('letscheck.html', pred="The probable diagnosis says it could be {}".format(prediction))
+        return render_template('letscheck.html', symptoms=inputt, pred=f"The probable diagnosis says it could be {prediction}", accuracy=f"The accuracy score is {accuracy:.2f}")
 
-\
 
 #Display 
 @application.route('/history')

@@ -100,10 +100,6 @@ def check_page():
 def about_page():
     return render_template('about.html')
 
-@application.route('/team')
-def team_page():
-    return render_template('team.html')
-
 @application.route('/logout')
 def logout():
     session.pop('user_id', None)
@@ -245,7 +241,9 @@ def predict():
         y_test = test['prognosis']
 
         col = x_test.columns
-        inputt = [str(x) for x in request.form.values()]
+        inputt = [str(x) for x in request.form.getlist('choice')]
+        print(inputt)
+        # inputt =  request.form.getlist('choice[]')
 
         # Check if all the input symptoms are among the 132 symptoms in the dataset
         if not all(symptom in col for symptom in inputt):
@@ -274,15 +272,15 @@ def predict():
 
         return render_template('letscheck.html', symptoms=inputt, pred=f"The probable diagnosis says it could be {prediction}", accuracy=f"The accuracy score is {accuracy:.2f}")
 
-@application.route('/decision-tree')
-def decision_tree():
-    dot_data = export_graphviz(model, out_file=None, feature_names=x_test.columns,
-                               class_names=model.classes_, filled=True, rounded=True,
-                               special_characters=True)
-    graph = graphviz.Source(dot_data)
-    graph.format = 'png'
-    graph.render('decision_tree')  # Save the image as 'decision_tree.png'
-    return send_file("decision_tree.png", mimetype='image/png')
+# @application.route('/decision-tree')
+# def decision_tree():
+#     dot_data = export_graphviz(model, out_file=None, feature_names=x_test.columns,
+#                                class_names=model.classes_, filled=True, rounded=True,
+#                                special_characters=True)
+#     graph = graphviz.Source(dot_data)
+#     graph.format = 'png'
+#     graph.render('decision_tree')  # Save the image as 'decision_tree.png'
+#     return send_file("decision_tree.png", mimetype='image/png')
 
 if __name__ == '__main__':
     application.run(debug=True, port=8001)

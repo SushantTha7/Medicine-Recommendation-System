@@ -11,19 +11,165 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/mainpage.css') }}">
   <style>
-     .logo a {
-            text-decoration: none;
-            color: #005f73;
-        }
+    .logo a {
+      text-decoration: none;
+      color: #005f73;
+    }
 
-        .logo h1 {
-            margin: 0;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .logo img {
-            height: 50px;
-        }
+    .logo h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .head {
+      text-align: center;
+      color: rgb(12, 132, 12);
+      margin: 30px 0px;
+    }
+
+    .hiddenCB {
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 90%;
+      margin: auto;
+      height: 60vh;
+      overflow: auto;
+      position: relative;
+    }
+
+    .btn-submit {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .hiddenCB h3 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .checkbox-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .checkbox-container div {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      transition: background-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .checkbox-container div:hover {
+      background-color: #f0f0f0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      margin-right: 10px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .checkbox-container label {
+      font-size: 1rem;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .checkbox-container input[type="checkbox"]:checked+label {
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .checkbox-container div:focus-within {
+      outline: 2px solid #007bff;
+    }
+
+    /* General container for the output section */
+    .output-container {
+      max-width: 800px;
+
+      padding: 20px;
+      background-color: #ee8c1b77;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin: 40px auto;
+    }
+
+    /* Styling for headings (h2) */
+    .output-container h2 {
+      font-size: 1.8rem;
+      color: #007bff;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 5px;
+    }
+
+    /* Styling for paragraph text */
+    .output-container p {
+      font-size: 1.2rem;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    /* Special style for prediction result */
+    .output-container .prediction-result {
+      font-size: 1.4rem;
+      color: #28a745;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    /* Special style for accuracy display */
+    .output-container .accuracy-result {
+      font-size: 1.2rem;
+      color: #ff9800;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    /* Additional spacing between sections */
+    .output-container .section {
+      margin-bottom: 30px;
+    }
+
+    /* Style to enhance the overall readability */
+    .output-container p::before {
+      content: '✔️ ';
+      color: #007bff;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .output-container {
+        padding: 15px;
+      }
+
+      .output-container h2 {
+        font-size: 1.5rem;
+      }
+
+      .output-container p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 
@@ -32,13 +178,17 @@
     <div class="logo">
       <img src="{{ url_for('static',filename='images/logo.png') }}" alt="logo">
       <h1><a href="{{ url_for('home') }}">Medicination</a></h1>
-  </div>
-
+    </div>
+    <nav>
+      <ul class="nav__links">
+          <li><a href="{{ url_for('history_page') }}">History</a></li>
+      </ul>
+  </nav>
     <a class="cta" href="{{ url_for('check_page') }}"><button>Let's Check</button></a>
   </header>
 
   <div id="body">
-    <h1>Enter Your Symptoms</h1>
+    <h1 class=" head">Enter Your Symptoms</h1>
     <div>
       <form method="POST" action="/predict" onsubmit="return showSelectedValues()">
         <div class="hiddenCB">
@@ -562,25 +712,34 @@
             </div>
           </div>
           <br>
-        <button type="submit">Submit</button>
+          <div class="btn-submit"><button type="submit">Make Prediction</button></div>
       </form>
       <br>
-      <!-- For output display -->
+
+    </div>
+    <div class="output-container">
       {% if pred %}
-      <h2>Entered symptoms:</h2>
-      {% for symptom in symptoms %}
-      <p>{{ symptom }}</p>
-      {% endfor %}
-      <br>
-      <h2>Prediction:</h2>
-      <p>{{ pred }}</p>
-      <br>
+      <div class="section">
+        <h2>Entered symptoms:</h2>
+        {% for symptom in symptoms %}
+        <p>{{ symptom }}</p>
+        {% endfor %}
+      </div>
+
+      <div class="section">
+        <h2>Prediction:</h2>
+        <p class="prediction-result">{{ pred }}</p>
+      </div>
+
       {% if accuracy %}
-      <h2>Accuracy:</h2>
-      <p>{{ accuracy }}</p>
-      {% endif %} {% else %}
+      <div class="section">
+        <h2>Accuracy:</h2>
+        <p class="accuracy-result">{{ accuracy }}</p>
+      </div>
       {% endif %}
-        </div>   
+      {% endif %}
+    </div>
+
     <script>
       function showSelectedValues() {
         let selectedValues = [];
